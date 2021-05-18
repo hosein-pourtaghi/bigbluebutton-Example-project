@@ -1,0 +1,73 @@
+<h1 mat-dialog-title>میتینگ جدید</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <p>نام جلسه</p>
+    <input matInput tabindex="1" [(ngModel)]="data.name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <p>ایدی جلسه</p>
+    <input matInput tabindex="2" [(ngModel)]="data.meetingID" />
+  </mat-form-field>
+
+  <br>
+
+  <section class="example-section">
+    <mat-checkbox class="example-margin" [(ngModel)]="data.record"
+      >رکورد سرور</mat-checkbox
+    >
+  </section>
+
+  <section class="example-section">
+    <mat-checkbox
+      class="example-margin"
+      tabindex="4"
+      [(ngModel)]="data.autoStartRecording"
+      >رکورد اتوماتیک با جوین اولین کاربر</mat-checkbox
+    >
+  </section>
+
+  <section class="example-section">
+    <mat-checkbox
+      class="example-margin"
+      tabindex="5"
+      [(ngModel)]="data.allowStartStopRecording"
+      > اجازه رکورد / قطع رکورد به کاربران</mat-checkbox
+    >
+  </section>
+  <section class="example-section">
+    <mat-checkbox
+      class="example-margin"
+      tabindex="5"
+      [(ngModel)]="data.allowModsToUnmuteUsers"
+      >اجازه ادمین ها به ساکت کردن کاربر ها</mat-checkbox
+    >
+  </section>
+  <section class="example-section">
+    <mat-checkbox
+      class="example-margin"
+      tabindex="5"
+      [(ngModel)]="data.lockSettingsDisableCam"
+      >بستن دوربین کاربر ها</mat-checkbox
+    >
+  </section>
+  <section class="example-section">
+    <mat-checkbox
+      class="example-margin"
+      tabindex="5"
+      [(ngModel)]="data.lockSettingsDisableMic"
+      >بستن میکروفون کاربر ها</mat-checkbox
+    >
+  </section>
+
+  <br />
+  <!-- <p>
+    If you set both allowStartStopRecording=false and autoStartRecording = true,
+    then the entire length of the session will be recorded, and the moderators
+    in the session will not be able to pause/resume the recording.
+  </p> -->
+</div>
+<div mat-dialog-actions style="display: flex; float: left">
+  <button mat-button [mat-dialog-close]="data" tabindex="6">Ok</button>
+  <button mat-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
+</div>
